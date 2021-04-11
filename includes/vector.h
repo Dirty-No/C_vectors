@@ -6,7 +6,7 @@
 /*   By: smaccary <smaccary@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/27 14:24:23 by smaccary          #+#    #+#             */
-/*   Updated: 2021/04/08 14:12:20 by smaccary         ###   ########.fr       */
+/*   Updated: 2021/04/11 15:28:49 by smaccary         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,5 @@ void        free_vector(t_vector *vector);
 t_vector    *new_vector(size_t count, size_t size);
 t_vector    *vector_resize(t_vector *vector, size_t new_size);
 t_vector    *vector_append(t_vector *vector, void *add, size_t count);
-
+void        vector_iter(t_vector *vector, void (*func)());
 #endif

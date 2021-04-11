@@ -6,7 +6,7 @@
 /*   By: smaccary <smaccary@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/27 14:28:09 by smaccary          #+#    #+#             */
-/*   Updated: 2021/04/08 14:08:47 by smaccary         ###   ########.fr       */
+/*   Updated: 2021/04/11 17:41:02 by smaccary         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,4 +69,30 @@ void
 {
 	free(vector->bytes);
 	free(vector);
+}
+
+void
+	*vector_at(t_vector *vector, size_t index)
+{
+	return (vector->bytes + index * vector->obj_size);
+}
+
+void
+	vector_iter(t_vector *vector, void (*func)())
+{
+	size_t	index;
+
+	index = 0;
+	while (index < vector->len)
+	{
+		func(vector_at(vector, index));
+		index++;
+	}
+}
+
+void
+	vector_clear(t_vector *vector, void (*func)())
+{
+	vector_iter(vector, (void *)func);
+	free_vector(vector);
 }

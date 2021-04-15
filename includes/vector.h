@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   vector.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smaccary <smaccary@student.42.fr>          +#+  +:+       +#+        */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/27 14:24:23 by smaccary          #+#    #+#             */
-/*   Updated: 2021/04/11 15:28:49 by smaccary         ###   ########.fr       */
+/*   Updated: 2021/04/12 02:08:32 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,7 @@ t_vector    *new_vector(size_t count, size_t size);
 t_vector    *vector_resize(t_vector *vector, size_t new_size);
 t_vector    *vector_append(t_vector *vector, void *add, size_t count);
 void        vector_iter(t_vector *vector, void (*func)());
+void        vector_clear(t_vector *vector, void (*func)());
+void        *vector_end(t_vector *vector);
+void        *vector_at(t_vector *vector, size_t index);
 #endif

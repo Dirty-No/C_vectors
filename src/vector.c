@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   vector.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smaccary <smaccary@student.42.fr>          +#+  +:+       +#+        */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/27 14:28:09 by smaccary          #+#    #+#             */
-/*   Updated: 2021/04/11 17:41:02 by smaccary         ###   ########.fr       */
+/*   Updated: 2021/04/12 22:10:38 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,12 @@ void
 }
 
 void
+	*vector_end(t_vector *vector)
+{
+	return (vector->bytes + vector->len * vector->obj_size);
+}
+
+void
 	vector_iter(t_vector *vector, void (*func)())
 {
 	size_t	index;
@@ -93,6 +99,9 @@ void
 void
 	vector_clear(t_vector *vector, void (*func)())
 {
-	vector_iter(vector, (void *)func);
+	if (!vector)
+		return ;
+	if (func)
+		vector_iter(vector, (void *)func);
 	free_vector(vector);
 }

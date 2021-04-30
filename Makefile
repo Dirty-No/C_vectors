@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: smaccary <smaccary@student.42.fr>          +#+  +:+       +#+         #
+#    By: user42 <user42@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/05 13:26:40 by smaccary          #+#    #+#              #
-#    Updated: 2021/04/08 14:20:38 by smaccary         ###   ########.fr        #
+#    Updated: 2021/04/30 21:20:46 by user42           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ TEST_NAME=test
 
 CC = clang
 SRC_DIR = src
-SRC = $(addprefix $(SRC_DIR)/, utils.c vector.c)
+SRC = $(addprefix $(SRC_DIR)/, utils.c vector.c vector_utils.c)
 TEST_SRC = test.c
 
 OBJDIR = obj

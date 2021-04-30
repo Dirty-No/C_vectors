@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   vector.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/27 14:28:09 by smaccary          #+#    #+#             */
-/*   Updated: 2021/04/12 22:10:38 by root             ###   ########.fr       */
+/*   Updated: 2021/04/30 21:20:16 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,25 +62,6 @@ t_vector
 	vector->len = 0;
 	vector->obj_size = size;
 	return (vector);
-}
-
-void
-	free_vector(t_vector *vector)
-{
-	free(vector->bytes);
-	free(vector);
-}
-
-void
-	*vector_at(t_vector *vector, size_t index)
-{
-	return (vector->bytes + index * vector->obj_size);
-}
-
-void
-	*vector_end(t_vector *vector)
-{
-	return (vector->bytes + vector->len * vector->obj_size);
 }
 
 void
